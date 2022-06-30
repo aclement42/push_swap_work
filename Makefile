@@ -13,9 +13,16 @@ SRCS		=	$(addprefix $(PATH_SRCS),	\
 				main				\
 				parse				\
 				operations			\
-				operations2			\
+				operations1			\
+				commands			\
+				commands1			\
+				commands2			\
+				algo				\
 				algo_minus			\
-				utils))
+				algo_four			\
+				algo_five			\
+				utils				\
+				utils2))
 
 OBJS		=	$(SRCS:.c=.o)
 

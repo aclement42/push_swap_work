@@ -39,6 +39,42 @@ int	ft_check_int(char *str)
 		return (0);
 }
 
+int	ft_check_already_good(t_env *data, unsigned int i)
+{
+	int	j;
+
+	j = 0;
+	while (i < data->a.top - 1)
+	{
+		if (data->a.tab[j] <= data->a.tab[j + 1])
+		{
+			j++;
+			i++;
+		}
+		else
+			return (0);
+	}
+	return (1);
+}
+
+int	ft_check_already_good_plus(t_env *data, unsigned int i)
+{
+	int	j;
+
+	j = 0;
+	while (i <= data->a.top)
+	{
+		if (data->a.tab[j] <= data->a.tab[j + 1])
+		{
+			j++;
+			i++;
+		}
+		else
+			return (0);
+	}
+	return (1);
+}
+
 void	ft_check_nodup(t_env *data)
 {
 	int	i;
@@ -56,7 +92,6 @@ void	ft_check_nodup(t_env *data)
 		else
 		{
 			ft_putstr("Error\n");
-			// free ma tab_ref si ca echoue comme ca pas de leaks et fin de prgm
 			exit(0);
 		}
 	}	
